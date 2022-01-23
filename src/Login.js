@@ -20,33 +20,23 @@ function Login() {
         }
     }
 
-    const onClickLogin = () => {
-        console.log('click login')
-        console.log('ID : ', inputId)
-        console.log('PW : ', inputPw)    
-        axios.post('http://127.0.0.1:8000/api/auth/login/', {
-            'username': inputId,
-            'password': inputPw
-        })
-            .then(res => {                
-                if (res.status === 200) {
-                    console.log(res)
-                    document.location.href = '/'
-                }})
-            .catch(error => console.dir(error))
+    const onClickLogin = async () => {
+        try {
+            console.log('click login')
+            console.log('ID : ', inputId)
+            console.log('PW : ', inputPw)
+            const response = await axios.post('http://127.0.0.1:8000/api/auth/login/', {
+                'username': inputId,
+                'password': inputPw
+            })
+            if (response.status === 200) {
+                console.log(response)
+                document.location.href = '/'
+            }
+        } catch (error) {
+            console.dir(error)
+        }
     }
-
-    // useEffect(() => {
-    //     axios.post('http://127.0.0.1:8000/api/auth/login/', {
-    //         username: '김용주',
-    //         password: 'kyj130656'
-    //     })
-    //         .then(res => {
-    //             if (res.request.status === '200') {
-    //                 document.location.href = '/'
-    //             }})
-    //         .catch(error => console.dir(error)) 
-    // }, [])
 
 
     return(

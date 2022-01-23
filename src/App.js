@@ -19,18 +19,23 @@ function App () {
           }
         setAxiosInstance()
 
-        axios.get('http://127.0.0.1:8000/api/auth/me/', {
-            withCredentials : true
-        })
-            .then(res => {
-                if (res.status === 200) {
+        const checkLogin = async () => {
+            try {
+                const response = await axios.get('http://127.0.0.1:8000/api/auth/me/', {
+                    withCredentials: true
+                })
+            
+                if (response.status === 200) {
                     setIsLogin(true)
-                    console.log('isLogin ?? ::', isLogin)
-                console.log(res)
-                } 
-            })
-            .catch(error => console.dir(error))        
-        
+                    console.log('is Login ?? || ', isLogin)
+                    console.log(response)
+                }
+            
+            } catch (error) {
+                console.dir(error)   
+            }
+        }
+        checkLogin()
         
     },[])
 

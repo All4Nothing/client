@@ -3,12 +3,15 @@ import React from "react";
 
 function Main(props) {
 
-    const onLogout = () => {
-        axios.post('http://127.0.0.1:8000/api/auth/logout/', {
-            withCredentials : true
-        })
-            .then(res => console.log(res))
-            .catch(error => console.dir(error))
+    const onLogout = async () => {
+        try {
+            const response = await axios.post('http://127.0.0.1:8000/api/auth/logout/', {
+                withCredentials: true
+            })
+            console.log(response)
+        } catch (error) {
+            console.dir(error)
+        }
         document.location.href = '/'
     }
 
