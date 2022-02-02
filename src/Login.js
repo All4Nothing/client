@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import styles from "./Login.module.css";
 
 function Login() {
     const [inputId, setInputId] = useState('');
@@ -41,19 +42,19 @@ function Login() {
 
     return(
         <div>
-            <h1>Login</h1>
+            <h1 className={styles.Title}>Login</h1>
             <div>
-                <label htmlFor="input_id">ID:</label>
-                <input type = "text" id = "input_id" value = {inputId} onChange = {handleInputId} />
+                <label className = {styles.Label}htmlFor="input_id">ID:</label>
+                <input className = {styles.Input} type = "text" id = "input_id" value = {inputId} onChange = {handleInputId} />
                 
             </div>
             <div>
-                <label htmlFor="input_pw">PassWord:</label>
-                <input type = "password" id = "input_pw" value = {inputPw} onChange = {handleInputPw} onKeyPress = {handleKeyPress} />    
+                <label className = {styles.Label}htmlFor="input_pw">PassWord:</label>
+                <input className = {styles.Input} type = "password" id = "input_pw" value = {inputPw} onChange = {handleInputPw} onKeyPress = {handleKeyPress} />    
                 
             </div>
             <div>
-                <button type="button" onClick={onClickLogin}>Login</button>
+                <button className={styles.Button} type="button" onClick={onClickLogin}>Login</button>
             </div>
         </div>
     )

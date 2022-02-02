@@ -1,0 +1,22 @@
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+
+.Title {
+  font-family: "Spoqa Han Sans Neo", sans-serif;
+  border: 5px solid #ae00ff;
+  border-radius: 12px;
+  display: inline;
+  margin: 5px;
+}
+
+.List {
+  font-family: "Spoqa Han Sans Neo", sans-serif;
+  margin: 5px;
+}
+
+.Button {
+  font-family: "Spoqa Han Sans Neo", sans-serif;
+  color: white;
+  margin: 5px;
+  background-color: #ae00ff;
+  border-radius: 12px;
+}

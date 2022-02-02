@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import styles from "./Main.module.css"
 
 function Main({
     user
@@ -22,12 +23,12 @@ function Main({
     return (
         <div>
             <div>
-                <h2>Main 페이지</h2>
-                <li>{user.username}</li>
-                <li>{user.email}</li>
+                <h2 className={styles.Title}>Main 페이지</h2>
+                <li className={styles.List}>{user.username}</li>
+                <li className={styles.List}>{user.email}</li>
             </div>
             <div>
-                <button type='button' onClick={onLogout}>Logout</button>
+                <button className={styles.Button} type='button' onClick={onLogout}>Logout</button>
             </div>
         </div>
     )
