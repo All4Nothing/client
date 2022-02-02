@@ -1,7 +1,11 @@
 import axios from "axios";
-import React from "react";
+import React, { useState, useEffect } from "react";
 
-function Main(props) {
+function Main({
+    user
+}) {
+
+    console.log(user)
 
     const onLogout = async () => {
         try {
@@ -19,6 +23,8 @@ function Main(props) {
         <div>
             <div>
                 <h2>Main 페이지</h2>
+                <li>{user.username}</li>
+                <li>{user.email}</li>
             </div>
             <div>
                 <button type='button' onClick={onLogout}>Logout</button>

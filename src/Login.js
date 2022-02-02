@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 function Login() {
-    const [inputId, setInputId] = useState('김용주');
-    const [inputPw, setInputPw] = useState('kyj130656');
+    const [inputId, setInputId] = useState('');
+    const [inputPw, setInputPw] = useState('');
 
-    const handleInputId = (event) => {
+    const handleInputId = (event) => { //event: React.ChangeEvent
         setInputId(event.target.value);
     }
 
@@ -43,12 +43,14 @@ function Login() {
         <div>
             <h1>Login</h1>
             <div>
-                <label htmlFor="input_id">ID: </label>
-                <input type = "text" name = "input_id" value = {inputId} onChange = {handleInputId} />
+                <label htmlFor="input_id">ID:</label>
+                <input type = "text" id = "input_id" value = {inputId} onChange = {handleInputId} />
+                
             </div>
             <div>
-                <label htmlFor="input_pw">PassWord: </label>
-                <input type = "password" name = "input_pw" value = {inputPw} onChange = {handleInputPw} onKeyPress = {handleKeyPress} />    
+                <label htmlFor="input_pw">PassWord:</label>
+                <input type = "password" id = "input_pw" value = {inputPw} onChange = {handleInputPw} onKeyPress = {handleKeyPress} />    
+                
             </div>
             <div>
                 <button type="button" onClick={onClickLogin}>Login</button>

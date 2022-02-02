@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Login /> matches snapshot 1`] = `
+<div>
+  <div>
+    <h1>
+      Login
+    </h1>
+    <div>
+      <label
+        for="input_id"
+      >
+        ID:
+      </label>
+      <input
+        id="input_id"
+        type="text"
+        value=""
+      />
+    </div>
+    <div>
+      <label
+        for="input_pw"
+      >
+        PassWord:
+      </label>
+      <input
+        id="input_pw"
+        type="password"
+        value=""
+      />
+    </div>
+    <div>
+      <button
+        type="button"
+      >
+        Login
+      </button>
+    </div>
+  </div>
+</div>
+`;

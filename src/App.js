@@ -6,6 +6,7 @@ import Cookies from 'js-cookie';
 
 function App () {
     const [isLogin, setIsLogin] = useState(false)
+    const [user, setUser] = useState([])
 
     useEffect(() => {
         const setAxiosInstance = () => {
@@ -29,6 +30,7 @@ function App () {
                     setIsLogin(true)
                     console.log('is Login ?? || ', isLogin)
                     console.log(response)
+                    setUser(response.data)
                 }
             
             } catch (error) {
@@ -42,7 +44,7 @@ function App () {
     return (
         <div>
             {isLogin ?
-                <Main isLogin={isLogin} /> :
+                <Main user={user} isLogin={isLogin} /> :
                 <Login />}
         </div>
     )
